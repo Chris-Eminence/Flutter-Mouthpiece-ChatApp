@@ -24,7 +24,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               tag: 'logo_transition',
               child: SizedBox(
                 height: 200.0,
-                child: Image.asset('images/logo.png'),
+                child: Image.asset('images/mouth_piece_icon.png'),
               ),
             ),
             const SizedBox(

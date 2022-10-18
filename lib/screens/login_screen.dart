@@ -23,8 +23,8 @@ class _LoginScreenState extends State<LoginScreen> {
             Hero(
               tag: 'logo_transition',
               child: SizedBox(
-                height: 200.0,
-                child: Image.asset('images/logo.png'),
+                height: 400.0,
+                child: Image.asset('images/mouth_piece_icon.png'),
               ),
             ),
             const SizedBox(

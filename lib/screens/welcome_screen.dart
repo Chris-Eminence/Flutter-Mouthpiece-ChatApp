@@ -53,13 +53,13 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   tag: 'logo_transition',
                   child: SizedBox(
                     height: 60.0,
-                    child: Image.asset('images/logo.png'),
+                    child: Image.asset('images/mouth_piece_icon.png'),
                   ),
                 ),
                 TypewriterAnimatedTextKit(
                   text: const ['Mouthpiece'],
                   textStyle: const TextStyle(
-                    color: Colors.black,
+                    color: Colors.lightBlueAccent,
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
                   ),
