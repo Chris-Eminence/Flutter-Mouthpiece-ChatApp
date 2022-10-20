@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mouthpiece/components/rounded_button.dart';
 import 'package:mouthpiece/constants.dart';
 
+
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
 
@@ -31,6 +32,8 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 48.0,
             ),
             TextField(
+              textAlign: TextAlign.center,
+              keyboardType: TextInputType.emailAddress,
                 onChanged: (value) {
                   //Do something with the user input.
                 },
@@ -39,7 +42,10 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(
               height: 8.0,
             ),
-            TextField(
+            TextField(       
+              obscureText: true,       
+              textAlign: TextAlign.center,
+              keyboardType: TextInputType.visiblePassword,
                 onChanged: (value) {
                   //Do something with the user input.
                 },
