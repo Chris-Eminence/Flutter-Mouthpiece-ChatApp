@@ -15,11 +15,18 @@ final _auth = FirebaseAuth.instance;
 // final loggedInUser = FirebaseAuth.instanceFor;
 late User loggedInUser;
 
+  @override
+  void initState() {
+    super.initState();
+    getNewUsers();
+  }
+
 void getNewUsers() async{
   try{
     final user = await _auth.currentUser;
     if (user != null ){
       loggedInUser = user;
+      print(loggedInUser.email);
     }
   }catch(e){
     print (e);
