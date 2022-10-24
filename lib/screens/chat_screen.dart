@@ -43,9 +43,11 @@ void getNewUsers() async{
               icon: Icon(Icons.close),
               onPressed: () {
                 //Implement logout functionality
+                _auth.signOut();
+                Navigator.pop(context);
               }),
         ],
-        title: Text('⚡️Chat'),
+        title: Text('💬Mouthpiece'),
         backgroundColor: Colors.lightBlueAccent,
       ),
       body: SafeArea(
