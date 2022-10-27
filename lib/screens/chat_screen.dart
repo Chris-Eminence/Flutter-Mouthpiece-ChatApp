@@ -32,6 +32,22 @@ void getNewUsers() async{
     }
   }catch(e){
     print (e);
+  } 
+}
+
+// void getMessages() async {
+//   final messages = await _firesStore.collection('messages').get(); //getting documents from FirestoreFirebase
+//   // using for loop to get the messages from fireStore because colloections returns a list
+//   for (var message in messages.docs){
+//     print(message.data);
+//   }
+// }
+
+void messagesStream() async {
+  await for (var snapshots in _firesStore.collection('messages').snapshots()){
+    for (var message in snapshots.docs){
+      print (message.data);
+    }
   }
 }
 
