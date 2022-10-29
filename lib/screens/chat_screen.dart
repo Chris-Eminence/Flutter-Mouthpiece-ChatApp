@@ -97,9 +97,10 @@ void messagesStream() async {
 
                   }
                   return Column(
-                    children: messageWidgets ,
+                    children: messageWidgets,
                   );
                 }
+                throw '' ;
               },
             ),
             Container(
