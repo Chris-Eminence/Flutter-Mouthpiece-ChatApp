@@ -73,6 +73,35 @@ void messagesStream() async {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            StreamBuilder<QuerySnapshot>(
+              stream: _firesStore.collection('messages').snapshots(),
+              
+              builder: (context, snapshot){
+                if (snapshot.hasData){
+                  final messages = snapshot.data!.docs;
+                  List<Text> messageWidgets = [];
+                  for (var message in messages){
+                    final messageText = message['text'];
+                    // final messageText = message.data['text'];
+
+                    final messageSender = message['sender'];
+                    // final messageSender = message.data['sender'];
+
+                    // final messageSender = message.get('sender'); this didn't return any error
+
+                    
+
+
+                    final messageWidgets = Text('$messageText from $messageSender');
+                    messageWidgets.add(messageWidgets);
+
+                  }
+                  return Column(
+                    children: messageWidgets ,
+                  );
+                }
+              },
+            ),
             Container(
               decoration: kMessageContainerDecoration,
               child: Row(
