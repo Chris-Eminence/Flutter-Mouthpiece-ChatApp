@@ -81,17 +81,18 @@ void messagesStream() async {
                   final messages = snapshot.data!.docs;
                   List<Text> messageWidgets = [];
                   for (var message in messages){
+
+
                     final messageText = message['text'];
                     // final messageText = message.data['text'];
-
                     final messageSender = message['sender'];
                     // final messageSender = message.data['sender'];
 
                     // final messageSender = message.get('sender'); this didn't return any error
 
 
-                    final messageWidgets = Text('$messageText from $messageSender');
-                    messageText.add(messageWidgets);
+                    final messageWidget = Text('$messageText from $messageSender');
+                    messageWidgets.add(messageWidget);
 
                   }
                   return Column(
