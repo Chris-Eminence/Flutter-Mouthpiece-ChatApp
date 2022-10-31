@@ -89,11 +89,9 @@ void messagesStream() async {
 
                     // final messageSender = message.get('sender'); this didn't return any error
 
-                    
-
 
                     final messageWidgets = Text('$messageText from $messageSender');
-                    messageWidgets.add(messageWidgets);
+                    messageText.add(messageWidgets);
 
                   }
                   return Column(
