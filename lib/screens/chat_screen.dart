@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:mouthpiece/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -78,6 +80,13 @@ void messagesStream() async {
               
               builder: (context, snapshot){
                 if (snapshot.hasData){
+                  return const Center(
+                    child: CircularProgressIndicator(
+                    backgroundColor: Colors.lightBlueAccent,
+                    ),
+
+                  );
+                }
                   final messages = snapshot.data!.docs;
                   List<Text> messageWidgets = [];
                   for (var message in messages){
@@ -95,10 +104,12 @@ void messagesStream() async {
                     messageWidgets.add(messageWidget);
 
                   }
-                  return Column(
-                    children: messageWidgets,
+                  return Expanded(
+                    child: ListView(
+                      children: messageWidgets,
+                    ),
                   );
-                }
+                
                 throw '' ;
               },
             ),
@@ -124,7 +135,7 @@ void messagesStream() async {
                         'sender': loggedInUser.email,
                       });
                     },
-                    child: Text(
+                    child: const Text(
                       'Send',
                       style: kSendButtonTextStyle,
                     ),
