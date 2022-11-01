@@ -154,7 +154,6 @@ class MessageStream extends StatelessWidget {
     );
   }
 }
-
 class MessageBubble extends StatelessWidget {
   MessageBubble({required this.sender, required this.text, required this.isMe});
 
