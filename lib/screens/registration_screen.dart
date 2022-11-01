@@ -31,13 +31,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Hero(
+              Flexible(
+                child: Hero(
                 tag: 'logo_transition',
                 child: SizedBox(
                   height: 200.0,
                   child: Image.asset('images/mouth_piece_icon.png'),
                 ),
-              ),
+              ),),
               const SizedBox(
                 height: 48.0,
               ),
